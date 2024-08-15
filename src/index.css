@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(images/medium-shot-young-woman-posing-with-headphones-Recovered.jpg);
+  background-size: cover;
 }
 
 code {
