@@ -1,0 +1,55 @@
+.custom-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    color: rgb(2, 87, 214);
+    background-color: white;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+}
+.custom-button.activebtn{
+    background-color: rgb(2, 87, 214);
+    transition: 0.3s;
+    color: white;
+}
+.custom-button.activebtn #lock{
+    color: white;
+}
+.signin{
+    height: 40px;
+    width: 40px;
+    padding: 0;
+
+}
+.signup{
+    padding: 0px 30px;
+    border-radius: 35px 0 0 35px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 0;
+}
+.signin #lock {
+    color: rgb(2, 87, 214);
+}
+.signup #lock{
+    color: rgb(2, 87, 214);
+}
+.left{
+    background-color: rgba(255, 255, 255, 0.541);
+    width: 60px;
+    height: 60px;
+    font-size: x-large;
+}
+#arrowleft{
+    color: rgb(0, 60, 255);
+}
+.right{
+    background-color: rgba(255, 255, 255, 0.541);
+    width: 60px;
+    height: 60px;
+    font-size: x-large;
+}

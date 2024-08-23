@@ -3,5 +3,9 @@
     align-items: center;
     gap: 80px;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 50px;
+}
+#wave{
+    position: absolute;
+    bottom: 0;
 }

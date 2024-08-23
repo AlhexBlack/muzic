@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
+import React, {useState, useEffect} from 'react'
+import {Route, Routes, Link, useLocation } from 'react-router-dom'
 import Home from '../pages/Home'
 import About from '../pages/About'
 import Contact from '../pages/Contact'
@@ -7,18 +7,45 @@ import Features from '../pages/Features'
 import Signin from '../pages/Signin'
 import Signup from '../pages/Signup'
 import './RouterLinks.css'
+import Button from './Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock } from '@fortawesome/free-solid-svg-icons'
 
 const RouterLinks = () => {
+    const location = useLocation();
     const [selectedLink, setSelectedLink] = useState(null);
+
+    useEffect(() => {
+        switch (location.pathname) {
+          case '/':
+            setSelectedLink('Home');
+            break;
+          case '/about':
+            setSelectedLink('About');
+            break;
+          case '/features':
+            setSelectedLink('Features');
+            break;
+          case '/contact':
+            setSelectedLink('Contact');
+            break;
+          case '/signin':
+            setSelectedLink('SignIn');
+            break;
+          case '/signup':
+            setSelectedLink('SignUp');
+            break;
+          default:
+            setSelectedLink(null);
+        }
+      }, [location.pathname]);
 
     const handleLinkClick = (linkText) => {
         setSelectedLink(linkText);
     };
 
   return (
-    <Router>
+    <div>
         <div>
              <nav id='navbar'>
                 <ul id='navul'>
@@ -56,14 +83,20 @@ const RouterLinks = () => {
                     <li>
                         <div id='item3'>
                             <li>
-                            <button id='signinbtn'
-                            className={selectedLink === 'SignIn' ? 'activebtn' : ''} onClick={() => handleLinkClick('SignIn')}
-                            ><Link to="/signin"><FontAwesomeIcon icon={faLock} id='lock'/></Link></button>
+                                <Button
+                                to={"/signin"}
+                                className={`signin ${selectedLink ===  'SignIn' ? 'activebtn' : ''}`}
+                                onClick={() => handleLinkClick}>
+                                    <FontAwesomeIcon icon={faLock} id='lock'/>
+                                </Button>
                             </li> 
-                            <li>                
-                            <button id='signupbtn'
-                            className={selectedLink === 'SignUp' ? 'activebtn' : ''} onClick={() => handleLinkClick('SignUp')}
-                            ><Link to="/signup" id='lock'>SignUp</Link></button>
+                            <li>
+                                <Button
+                                to={"/signup"}
+                                className={`signup ${selectedLink === 'SignUp' ? 'activebtn' : ''}`}
+                                onClick={() => handleLinkClick}>
+                                    <p id='lock'>SignUp</p>
+                                </Button>
                             </li>   
                         </div>
                     </li>    
@@ -78,7 +111,7 @@ const RouterLinks = () => {
             <Route path='/signin' element={<Signin/>} ></Route>
             <Route path='/signup' element={<Signup/>} ></Route>
         </Routes>
-    </Router>
+    </div>
   )
 }
 

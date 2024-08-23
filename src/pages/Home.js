@@ -1,44 +1,62 @@
 import React from 'react'
-import CardSmall from '../components/CardSmall.js'
-import CardLarge from '../components/CardLarge.js'
 import './Home.css'
+import Wizkid from '../images/wizkid.JPG'
 import AyraStarr from '../images/ayra.JPG'
 import OmahLay from '../images/omah_lay.JPG'
 import Tiwa from '../images/tiwa.JPG'
 import Kizz from '../images/kizz_daniel.JPG'
-import Previous from '../components/Previous.js'
-import Next from '../components/Next.js'
+import Button from '../components/Button.js'
+import Card from '../components/Card.js'
+import Wave from '../images/wave.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeftLong, faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
 
 const Home = () => {
   return (
+    <div id='page'>
     <div id='carddiv'>
-    <Previous/>
-    <CardSmall
+      <Button className={`left`}>
+        <FontAwesomeIcon icon={faArrowLeftLong} id='arrowleft'/>
+      </Button>
+
+    <Card
       imgSrc={AyraStarr}
-      imgAlt="wizkid"
-      title1="Bloody"
-      title2="SAMARITAN"
+      imgAlt="Ayra starr"
+      title="Bloody Samaritan"
       artist="Ayra Starr"/>
-    <CardSmall
+
+    <Card
     imgSrc={OmahLay}
-    imgAlt="wizkid"
-    title1="Bad"
-    title2="influence"
+    imgAlt="omah lay"
+    title="Bad Influence"
     artist="Omah Lay"/>
-    <CardLarge/>
-    <CardSmall
+
+    <Card
+    imgSrc={Wizkid}
+    imgAlt="wizkid"
+    title="Essence"
+    className={'large'}
+    artist="Wizkid"/>
+
+    <Card
     imgSrc={Tiwa}
-    imgAlt="wizkid"
-    title1="Pick"
-    title2="up"
+    imgAlt="Tiwa Savage"
+    title="Pick up"
     artist="Tiwa Savage"/>
-    <CardSmall
+
+    <Card
     imgSrc={Kizz}
-    imgAlt="wizkid"
-    title1="Eh"
-    title2="God"
+    imgAlt="Kizz daniel"
+    title="Eh God"
     artist="Kizz Daniel"/>
-    <Next/>
+
+    <Button className={`right`}>
+        <FontAwesomeIcon icon={faArrowRightLong} id='arrowleft'/>
+    </Button>
+    </div>
+    <div id='wave-container'>
+      <img src={Wave} alt='music wave' id='wave'></img>
+    </div>
     </div>
   )
 }
