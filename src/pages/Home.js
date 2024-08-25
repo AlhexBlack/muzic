@@ -49,6 +49,47 @@ const Home = () => {
       artist:"Kizz Daniel",
       isLarge: false,
     },
+    {
+      id: 6,
+      imgSrc:'/images/ayra.JPG',
+      imgAlt:"Ayra starr",
+      title:"Bloody Samaritan",
+      artist:"Ayra Starr",
+      isLarge: false,
+    },
+    {
+      id: 7,
+      imgSrc:'/images/omah_lay.JPG',
+      imgAlt:"omah lay",
+      title:"Bad Influence",
+      artist:"Omah Lay",
+      isLarge: false,
+    },
+    {
+      id: 8,
+      imgSrc:'/images/wizkid.JPG',
+      imgAlt:"wizkid",
+      title:"Essence",
+      className:'large',
+      artist:"Wizkid",
+      isLarge: true,
+    },
+    {
+      id: 9,
+      imgSrc:'/images/tiwa.JPG',
+      imgAlt:"Tiwa Savage",
+      title:"Pick up",
+      artist:"Tiwa Savage",
+      isLarge: false,
+    },
+    {
+      id: 10,
+      imgSrc:'images/kizz_daniel.JPG',
+      imgAlt:"Kizz daniel",
+      title:"Eh God",
+      artist:"Kizz Daniel",
+      isLarge: false,
+    },
   ]
 
   return (
@@ -60,7 +101,7 @@ const Home = () => {
 
     {
       musicList.map((music) => (
-        <Card
+       music.id <= 5 && <Card
       imgSrc={music.imgSrc}
       imgAlt={music.imgAlt}
       title={music.title}
